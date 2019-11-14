@@ -15,7 +15,7 @@ namespace I_DO_NOT_KNOW
             string playerAnswer = "nil";
 
             // Start of adventure
-            Console.WriteLine("While walking through a dark and dreary forest, you come across a cave entrance. " +
+            Console.WriteLine("While walking through a dark forest you come across a cave entrance. " +
                                 "\n\nIt's starting to rain and it's nearly night.\n\nDo you enter?");
 
             // Ask for player answer and store in variable
