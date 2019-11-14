@@ -11,7 +11,7 @@ namespace I_DO_NOT_KNOW
         static void Main(string[] args)
         {
 
-            // Declar variable for player answers
+            // Declare variable for player answers
             string playerAnswer = "nil";
 
             // Start of adventure
