@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace I_DO_NOT_KNOW
@@ -20,7 +21,7 @@ namespace I_DO_NOT_KNOW
             playerName = Console.ReadLine();
 
 
-            Console.WriteLine("While walking through a dark forest the brave adventurer " + playerName +
+            SlowWriter.Write("While walking through a dark forest the brave adventurer " + playerName +
                               " came across a cave entrance. " +
                               "\n\nIt started to rain and was nearly night.\n\nDid " + playerName + " enter?");
 
@@ -30,11 +31,11 @@ namespace I_DO_NOT_KNOW
             // What happens to player based on answer
             if (playerAnswer == "yes")
             {
-                Console.WriteLine(playerName + " has survived.");
+                SlowWriter.Write(playerName + " has survived.");
             }
             else
             {
-                Console.WriteLine(playerName + " has died of hypothermia in the rain.");
+                SlowWriter.Write(playerName + " has died of hypothermia in the rain.");
                 Console.Beep();
                 Console.Beep();
                 Console.Beep();
@@ -43,6 +44,20 @@ namespace I_DO_NOT_KNOW
             // Ask player what they want to do now
             Console.Write("--------------------------------------------------\nWould you like to play again? ");
             Console.ReadKey();
+        }
+    }
+
+    public class SlowWriter
+    {
+
+        public static void Write(string text)
+        {
+            Random rnd = new Random();
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(rnd.Next(30, 60));
+            }
         }
     }
 }
