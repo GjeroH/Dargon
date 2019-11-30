@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace I_DO_NOT_KNOW
+namespace Text_Adventure
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
 
             // Declare variable for player name and answers
@@ -20,7 +20,7 @@ namespace I_DO_NOT_KNOW
             Console.Write("Welcome to my text adventure.\n--------------------------------------------------\nWhat is your name? ");
             playerName = Console.ReadLine();
 
-            SlowWriter.Write($"While walking through a dark forest the brave adventurer {playerName} came across a cave entrance.\n\nIt started to rain and was nearly night.\n\nDid {playerName} enter?");
+            Typewriter.Write($"While walking through a dark forest the brave adventurer {playerName} came across a cave entrance.\n\nIt started to rain and was nearly night.\n\nDid {playerName} enter? ");
 
             // Ask for player answer and store in variable
             playerAnswer = Console.ReadLine();
@@ -28,33 +28,20 @@ namespace I_DO_NOT_KNOW
             // What happens to player based on answer
             if (playerAnswer == "yes")
             {
-                SlowWriter.Write($"{playerName} has survived.");
+                Typewriter.Write($"{playerName} has survived.");
             }
             else
             {
-                SlowWriter.Write($"{playerName} has died of hypothermia in the rain.");
+                Typewriter.Write($"{playerName} has died of hypothermia in the rain.");
                 Console.Beep();
                 Console.Beep();
                 Console.Beep();
             }
 
             // Ask player what they want to do now
+            Console.WriteLine();
             Console.Write("--------------------------------------------------\nWould you like to play again? ");
             Console.ReadKey();
-        }
-    }
-
-    public class SlowWriter
-    {
-
-        public static void Write(string text)
-        {
-            Random rnd = new Random();
-            foreach (char c in text)
-            {
-                Console.Write(c);
-                Thread.Sleep(rnd.Next(30, 60));
-            }
         }
     }
 }
