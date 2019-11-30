@@ -20,9 +20,7 @@ namespace I_DO_NOT_KNOW
             playerName = Console.ReadLine();
 
 
-            Console.WriteLine("While walking through a dark forest the brave adventurer " + playerName +
-                              " came across a cave entrance. " +
-                              "\n\nIt started to rain and was nearly night.\n\nDid " + playerName + " enter?");
+            Console.WriteLine($"While walking through a dark forest the brave adventurer {playerName} came across a cave entrance.\n\nIt started to rain and was nearly night.\n\nDid {playerName} enter?");
 
             // Ask for player answer and store in variable
             playerAnswer = Console.ReadLine();
@@ -30,11 +28,11 @@ namespace I_DO_NOT_KNOW
             // What happens to player based on answer
             if (playerAnswer == "yes")
             {
-                Console.WriteLine(playerName + " has survived.");
+                Console.WriteLine($"{playerName} has survived.");
             }
             else
             {
-                Console.WriteLine(playerName + " has died of hypothermia in the rain.");
+                Console.WriteLine($"{playerName} has died of hypothermia in the rain.");
                 Console.Beep();
                 Console.Beep();
                 Console.Beep();
