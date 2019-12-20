@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Text_Adventure
+namespace Dargon
 {
     class Typewriter
     {
